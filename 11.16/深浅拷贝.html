@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 深拷贝
+        // 1.用JSON.parse(JSON.stringify())
+        //     JSON.parse(JSON.stringify(obj)) 是最简单的实现方式，但是有一些缺陷：
+        //   对象的属性值是函数时，无法拷贝。
+        //   原型链上的属性无法拷贝
+        //   不能正确的处理 Date 类型的数据
+        //   不能处理 RegExp
+        //   会忽略 symbol
+        //   会忽略 undefined
+        let arr = [{
+            name: '阿怀',
+            age: '21'
+        }]
+        let arr1 = JSON.parse(JSON.stringify(arr))
+        arr1[0].name = '111'
+        console.log(arr1);
+
+        // 2.递归方法
+        let user = {
+            name: 'AQ',
+            person: {
+                age: 3
+            },
+            data: []
+        }
+
+        function copy(object) {
+            let obj = object instanceof Array ? [] : {}
+            for (const [k, v] of object.enteries(object)) {
+                debugger;
+                obj[k] = typeof v == 'object' ? copy(v) : v;
+            }
+            return obj
+        }
+
+
+        function deepClone(obj){
+            if(obj==null) return obj
+            if(obj instanceof Date) return new Date()
+            if(obj instanceof RegExp) return new RegExp()
+            if(typeof obj !=='object') return obj
+            let res=new obj.constructor()
+
+            for (key in obj){
+                res[key]=deepClone(obj[key])
+            }
+            console.log(res);
+            return res
+        }
+        let obj2=deepClone(obj1)
+        obj2.name='孙悟空'
+        obj2.sing.name='师傅'
+        console.log(obj1,obj2);
+
+        // 浅拷贝
+        // 1.object.assign()
+        let obj = {
+            a: 1,
+            b: 2
+        }
+        let obj2 = Object.assign({}, obj)
+        console.log(obj, obj2);
+
+        // 2.解构赋值
+        let obj3 = {
+            ...obj
+        }
+        console.log(obj3);
+
+        // 3.for in 循环
+        let arrs = {
+            name: 'chb',
+            child: ['本剑不才', '曾以此身破万军'],
+            fn: function () {},
+            age: 999
+        }
+        let list = {}
+        for (const key in Object.keys(arrs)) {
+            list[key] = obj[key]
+        }
+        console.log(list, arr1);
+    </script>
+
+    
+    <script>
+        // 深拷贝
+        // 1.用JSON.parse(JSON.stringify())
+        //     JSON.parse(JSON.stringify(obj)) 是最简单的实现方式，但是有一些缺陷：
+        //   对象的属性值是函数时，无法拷贝。
+        //   原型链上的属性无法拷贝
+        //   不能正确的处理 Date 类型的数据
+        //   不能处理 RegExp
+        //   会忽略 symbol
+        //   会忽略 undefined
+        let arr = [{
+            name: '阿怀',
+            age: '21'
+        }]
+        let arr1 = JSON.parse(JSON.stringify(arr))
+        arr1[0].name = '111'
+        console.log(arr1);
+
+        // 2.递归方法
+        let user = {
+            name: 'AQ',
+            person: {
+                age: 3
+            },
+            data: []
+        }
+
+        function copy(object) {
+            let obj = object instanceof Array ? [] : {}
+            for (const [k, v] of object.enteries(object)) {
+                debugger;
+                obj[k] = typeof v == 'object' ? copy(v) : v;
+            }
+            return obj
+        }
+
+
+        function deepClone(obj){
+            if(obj==null) return obj
+            if(obj instanceof Date) return new Date()
+            if(obj instanceof RegExp) return new RegExp()
+            if(typeof obj !=='object') return obj
+            let res=new obj.constructor()
+
+            for (key in obj){
+                res[key]=deepClone(obj[key])
+            }
+            console.log(res);
+            return res
+        }
+        let obj2=deepClone(obj1)
+        obj2.name='孙悟空'
+        obj2.sing.name='师傅'
+        console.log(obj1,obj2);
+
+        // 浅拷贝
+        // 1.object.assign()
+        let obj = {
+            a: 1,
+            b: 2
+        }
+        let obj2 = Object.assign({}, obj)
+        console.log(obj, obj2);
+
+        // 2.解构赋值
+        let obj3 = {
+            ...obj
+        }
+        console.log(obj3);
+
+        // 3.for in 循环
+        let arrs = {
+            name: 'chb',
+            child: ['本剑不才', '曾以此身破万军'],
+            fn: function () {},
+            age: 999
+        }
+        let list = {}
+        for (const key in Object.keys(arrs)) {
+            list[key] = obj[key]
+        }
+        console.log(list, arr1);
+    </script>
+
+
+    <script>
+        // 深拷贝
+        // 1.用JSON.parse(JSON.stringify())
+        //     JSON.parse(JSON.stringify(obj)) 是最简单的实现方式，但是有一些缺陷：
+        //   对象的属性值是函数时，无法拷贝。
+        //   原型链上的属性无法拷贝
+        //   不能正确的处理 Date 类型的数据
+        //   不能处理 RegExp
+        //   会忽略 symbol
+        //   会忽略 undefined
+        let arr = [{
+            name: '阿怀',
+            age: '21'
+        }]
+        let arr1 = JSON.parse(JSON.stringify(arr))
+        arr1[0].name = '111'
+        console.log(arr1);
+
+        // 2.递归方法
+        let user = {
+            name: 'AQ',
+            person: {
+                age: 3
+            },
+            data: []
+        }
+
+        function copy(object) {
+            let obj = object instanceof Array ? [] : {}
+            for (const [k, v] of object.enteries(object)) {
+                debugger;
+                obj[k] = typeof v == 'object' ? copy(v) : v;
+            }
+            return obj
+        }
+
+
+        function deepClone(obj){
+            if(obj==null) return obj
+            if(obj instanceof Date) return new Date()
+            if(obj instanceof RegExp) return new RegExp()
+            if(typeof obj !=='object') return obj
+            let res=new obj.constructor()
+
+            for (key in obj){
+                res[key]=deepClone(obj[key])
+            }
+            console.log(res);
+            return res
+        }
+        let obj2=deepClone(obj1)
+        obj2.name='孙悟空'
+        obj2.sing.name='师傅'
+        console.log(obj1,obj2);
+
+        // 浅拷贝
+        // 1.object.assign()
+        let obj = {
+            a: 1,
+            b: 2
+        }
+        let obj2 = Object.assign({}, obj)
+        console.log(obj, obj2);
+
+        // 2.解构赋值
+        let obj3 = {
+            ...obj
+        }
+        console.log(obj3);
+
+        // 3.for in 循环
+        let arrs = {
+            name: 'chb',
+            child: ['本剑不才', '曾以此身破万军'],
+            fn: function () {},
+            age: 999
+        }
+        let list = {}
+        for (const key in Object.keys(arrs)) {
+            list[key] = obj[key]
+        }
+        console.log(list, arr1);
+    </script>
+</body>
+
+</html>
