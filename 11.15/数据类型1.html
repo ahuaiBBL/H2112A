@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+              let str = "20";
+let num = Number(str);
+console.log(num);  //20
+let parstr = "18.9";
+let parse = parseInt(parstr);
+console.log(parse);  //18
+let flot = "11.11哈喽";
+let flots = parseFloat(flot);
+console.log(flots);  //11.11
+console.log(Number(""));  //0
+console.log(Number("666"));  //666
+console.log(Number("123px"));  //NaN
+
+console.log(Number(true));  //1
+console.log(Number(false));  //0
+console.log(Number(null));   //0
+console.log(Number(undefined));  //NaN
+let a = Symbol("111");
+// console.log(Number(a)); 报错
+console.log(Number(3n));       //3
+// console.log(Number(3c));报错
+
+// 转换字符串
+console.log(String(1));    //1
+console.log(String(NaN));   //NaN
+console.log(String(null));   //null
+console.log(String(undefined));  //undefined
+console.log(String(Symbol()));   //symbol()
+console.log(String({}));      //[object,object]
+
+console.log(11 + "11");   //1111
+console.log(10 + new Date()); 
+let i = 10;
+i++;
+console.log(i);    //11
+
+
+
+var h = 1;
+console.log(h); //1
+var b = h++;  //赋值在前，运算在后
+console.log(h);//2
+console.log(b);//1
+
+
+var c = 1;
+console.log(c); //1
+var o = c++; //运算在前，赋值在后
+console.log(c);//2
+console.log(o);//2
+
+
+var str1='123456'
+var str2='789'
+console.log(str1.length); //6
+var aa=str1.charAt(4)
+console.log(aa);  //5
+var b=str1+str2
+console.log(b);  //123456789
+console.log(str1.indexOf('2'));  //1
+console.log(str1.indexOf('7'));   //-1
+var str3='666999'
+console.log(str3.indexOf('9'));  //3
+console.log(str3.replace('6','7'));  //766999
+
+console.log(str1);   //123456
+console.log(str1.split());  //['123456']
+console.log(str1.split(''));  //['1','2','3','4','5','6']
+console.log(str1.split('1'));   //['','23456']
+console.log(str1.split('',2));   //['1','2']
+
+console.log(str1.substr(2,3));   //345
+    </script>
+</body>
+</html>
