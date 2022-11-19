@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 1.数组的合并
+        const a=[1,2]
+        const b=[3,4]
+        const c=[...a,...b]
+        const d=a.concat(b)
+        //循环push
+
+        // 2.数组的克隆
+        const aa=[1,2,3,4]
+        const bb=[...aa]
+        console.log(bb);
+
+
+        // 3.将伪数组转为真正的数组
+        const qq=document.querySelectorAll('div')
+        const divs=[...qq]
+        console.log(divs instanceof Array);
+    </script>
+    <!-- <div></div>
+    <script>
+        // 1.数组的合并
+        const a=[1,2]
+        const b=[3,4]
+        const c=[...a,...b]
+        const d=a.concat(b)
+        //循环push
+
+        // 2.数组的克隆
+        const aa=[1,2,3,4]
+        const bb=[...aa]
+        console.log(bb);
+
+
+        // 3.将伪数组转为真正的数组
+        const qq=document.querySelectorAll('div')
+        const divs=[...qq]
+        console.log(divs);
+    </script> -->
+    <!-- <div></div>
+    <script>
+        // 1.数组的合并
+        const a=[1,2]
+        const b=[3,4]
+        const c=[...a,...b]
+        const d=a.concat(b)
+        //循环push
+
+        // 2.数组的克隆
+        const aa=[1,2,3,4]
+        const bb=[...aa]
+        console.log(bb);
+
+
+        // 3.将伪数组转为真正的数组
+        const qq=document.querySelectorAll('div')
+        const divs=[...qq]
+        console.log(divs);
+    </script> -->
+</body>
+</html>

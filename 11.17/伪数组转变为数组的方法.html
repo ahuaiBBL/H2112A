@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 1.使用Array.prototype.slice.call()
+        var arr = Array.prototype.slice.call({
+            0: 'ccchhbb',
+            1: 12,
+            2: true,
+            length: 3  //自定义伪数组，length定义显示几个
+        })
+        console.log(arr);
+
+        const divs=document.querySelectorAll('div')
+        console.log(divs instanceof Array);  //false 不是一个数组
+        const arrs=Array.prototype.slice.call(divs)
+        console.log(arrs instanceof Array);  //true
+
+        // 2.使用[].slice.call()
+        const div1=document.querySelectorAll('div')
+        console.log(div1 instanceof Array);  //false 不是一个数组
+        const list=[].slice.call(div1)
+        console.log(list instanceof Array);  //true
+
+        // 3.使用es6中的Array.from方法
+        const arr1=document.querySelectorAll('div')
+        console.log(arr1 instanceof Array);  //false 不是一个数组
+        const list1=Array.from(arr1)
+        console.log(list1 instanceof Array); //true
+
+
+        // 4.for循环
+        const arr2=document.querySelectorAll('div')
+        console.log(arr2 instanceof Array);
+        let list2=[]
+        for(let i=0;i<divs.length;i++){
+            list2.push(divs[i])
+        }
+        console.log(list2 instanceof Array);
+
+
+        // 5.扩展运算符
+        const arr3=document.querySelectorAll('div')
+        console.log(arr3 instanceof Array);
+        const list3=[...arr3]
+        console.log(list3 instanceof Array);
+
+
+
+        // 总结
+        // [].slice.call() 与Array.prototype.slice.call() 的区别就在于通过Array.prototype找效率更高。
+        // 通过[] 去调用slice方法需要通过原型链去找slice方法。
+        // 解构赋值手动创建的伪数组对象时， 需要添加iterator接口。
+    </script>
+    <!-- <div></div>
+    <script>
+        // 1.使用Array.prototype.slice.call()
+        var arr = Array.prototype.slice.call({
+            0: 'ccchhbb',
+            1: 12,
+            2: true,
+            length: 3  //自定义伪数组，length定义显示几个
+        })
+        console.log(arr);
+
+        const divs=document.querySelectorAll('div')
+        console.log(divs instanceof Array);  //false 不是一个数组
+        const arrs=Array.prototype.slice.call(divs)
+        console.log(arrs instanceof Array);  //true
+
+        // 2.使用[].slice.call()
+        const div1=document.querySelectorAll('div')
+        console.log(div1 instanceof Array);  //false 不是一个数组
+        const list=[].slice.call(div1)
+        console.log(list instanceof Array);  //true
+
+        // 3.使用es6中的Array.from方法
+        const arr1=document.querySelectorAll('div')
+        console.log(arr1 instanceof Array);  //false 不是一个数组
+        const list1=Array.from(arr1)
+        console.log(list1 instanceof Array); //true
+
+
+        // 4.for循环
+        const arr2=document.querySelectorAll('div')
+        console.log(arr2 instanceof Array);
+        let list2=[]
+        for(let i=0;i<divs.length;i++){
+            list2.push(divs[i])
+        }
+        console.log(list2 instanceof Array);
+
+
+        // 5.扩展运算符
+        const arr3=document.querySelectorAll('div')
+        console.log(arr3 instanceof Array);
+        const list3=[...arr3]
+        console.log(list3 instanceof Array);
+
+
+
+        // 总结
+        // [].slice.call() 与Array.prototype.slice.call() 的区别就在于通过Array.prototype找效率更高。
+        // 通过[] 去调用slice方法需要通过原型链去找slice方法。
+        // 解构赋值手动创建的伪数组对象时， 需要添加iterator接口。
+    </script> -->
+    <!-- <div></div>
+    <script>
+        // 1.使用Array.prototype.slice.call()
+        var arr = Array.prototype.slice.call({
+            0: 'ccchhbb',
+            1: 12,
+            2: true,
+            length: 3  //自定义伪数组，length定义显示几个
+        })
+        console.log(arr);
+
+        const divs=document.querySelectorAll('div')
+        console.log(divs instanceof Array);  //false 不是一个数组
+        const arrs=Array.prototype.slice.call(divs)
+        console.log(arrs instanceof Array);  //true
+
+        // 2.使用[].slice.call()
+        const div1=document.querySelectorAll('div')
+        console.log(div1 instanceof Array);  //false 不是一个数组
+        const list=[].slice.call(div1)
+        console.log(list instanceof Array);  //true
+
+        // 3.使用es6中的Array.from方法
+        const arr1=document.querySelectorAll('div')
+        console.log(arr1 instanceof Array);  //false 不是一个数组
+        const list1=Array.from(arr1)
+        console.log(list1 instanceof Array); //true
+
+
+        // 4.for循环
+        const arr2=document.querySelectorAll('div')
+        console.log(arr2 instanceof Array);
+        let list2=[]
+        for(let i=0;i<divs.length;i++){
+            list2.push(divs[i])
+        }
+        console.log(list2 instanceof Array);
+
+
+        // 5.扩展运算符
+        const arr3=document.querySelectorAll('div')
+        console.log(arr3 instanceof Array);
+        const list3=[...arr3]
+        console.log(list3 instanceof Array);
+
+
+
+        // 总结
+        // [].slice.call() 与Array.prototype.slice.call() 的区别就在于通过Array.prototype找效率更高。
+        // 通过[] 去调用slice方法需要通过原型链去找slice方法。
+        // 解构赋值手动创建的伪数组对象时， 需要添加iterator接口。
+    </script> -->
+</body>
+
+</html>
