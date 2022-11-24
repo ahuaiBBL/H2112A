@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 概念：为了提供更多数值类型的键，拓展了传统object只能使用字符串作为键的延伸
+        // 方法：
+        // 1.使用new Map()
+        // 2.判断长度：map.size(尺长，长度)
+        // 3.添加元素：map.set()
+        // 4.获取键值：map.get()
+        // 5.判断当前对象存不存在该属性：map.has()
+        // 6.删除当前对象中的属性：map.delete()
+        // 7.清空该方法的所有成员：map.clear()
+
+
+        const map=new Map([
+            ['name','阿怀'],
+            ['title','666']
+    ])
+        console.log(map.size); //2
+        console.log(map.has('name'));  //true
+        console.log(map.get('name'));  //阿怀
+        console.log(map.has('title'));  //true
+        console.log(map.get('title'));  //666
+
+        // 声明一个map函数
+        const mp=new Map()
+        // set属性
+        mp.set('name','阿怀')
+        // 如何set一个方法
+        mp.set('change',function(){
+            console.log('所选之路，为足球而生.');
+        })
+        let key={
+            school:'666'
+        }
+        mp.set(key,['清华','北大','政法'])
+        console.log(mp);
+
+        // 删除其中一个key
+        mp.delete('name')
+        console.log(mp);
+        // 判断当前的键是否存在map中
+        console.log(mp.has('change'));
+        console.log(mp.has('key'));
+        // 获取一个map
+        console.log(mp.get('change'));
+        console.log(mp.get(key));
+        // 判断长度
+        console.log(mp.size);
+        // 遍历
+        for(let key of mp){
+            console.log(key);
+        }
+    </script>
+
+    <!-- <script>
+          const map=new Map([
+            ['name','阿怀'],
+            ['title','666']
+    ])
+        console.log(map.size); //2
+        console.log(map.has('name'));  //true
+        console.log(map.get('name'));  //阿怀
+        console.log(map.has('title'));  //true
+        console.log(map.get('title'));  //666
+
+        // 声明一个map函数
+        const mp=new Map()
+        // set属性
+        mp.set('name','阿怀')
+        // 如何set一个方法
+        mp.set('change',function(){
+            console.log('所选之路，为足球而生.');
+        })
+        let key={
+            school:'666'
+        }
+        mp.set(key,['清华','北大','政法'])
+        console.log(mp);
+
+        // 删除其中一个key
+        mp.delete('name')
+        console.log(mp);
+        // 判断当前的键是否存在map中
+        console.log(mp.has('change'));
+        console.log(mp.has('key'));
+        // 获取一个map
+        console.log(mp.get('change'));
+        console.log(mp.get(key));
+        // 判断长度
+        console.log(mp.size);
+        // 遍历
+        for(let key of mp){
+            console.log(key);
+        }
+    </script> -->
+
+
+    
+    <!-- <script>
+          const map=new Map([
+            ['name','阿怀'],
+            ['title','666']
+    ])
+        console.log(map.size); //2
+        console.log(map.has('name'));  //true
+        console.log(map.get('name'));  //阿怀
+        console.log(map.has('title'));  //true
+        console.log(map.get('title'));  //666
+
+        // 声明一个map函数
+        const mp=new Map()
+        // set属性
+        mp.set('name','阿怀')
+        // 如何set一个方法
+        mp.set('change',function(){
+            console.log('所选之路，为足球而生.');
+        })
+        let key={
+            school:'666'
+        }
+        mp.set(key,['清华','北大','政法'])
+        console.log(mp);
+
+        // 删除其中一个key
+        mp.delete('name')
+        console.log(mp);
+        // 判断当前的键是否存在map中
+        console.log(mp.has('change'));
+        console.log(mp.has('key'));
+        // 获取一个map
+        console.log(mp.get('change'));
+        console.log(mp.get(key));
+        // 判断长度
+        console.log(mp.size);
+        // 遍历
+        for(let key of mp){
+            console.log(key);
+        }
+    </script> -->
+</body>
+</html>
