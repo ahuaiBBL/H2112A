@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        ['a', 'b', 'c'].fill(7)
+        console.log(['a', 'b', 'c'].fill(7));
+        // [7, 7, 7]
+
+        new Array(3).fill(7)
+        console.log(new Array(3).fill(7));
+        // [7, 7, 7]
+
+        // fill方法还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置。
+        ['a', 'b', 'c'].fill(7, 1, 2)
+        console.log(['a', 'b', 'c'].fill(7, 1, 2));
+        // ['a', 7, 'c']
+
+        for (let index of ['a', 'b'].keys()) {
+            console.log(index);
+        }
+        // 0
+        // 1
+
+        for (let elem of ['a', 'b'].values()) {
+            console.log(elem);
+        }
+        // 'a'
+        // 'b'
+
+        for (let [index, elem] of ['a', 'b'].entries()) {
+            console.log(index, elem);
+        }
+        // 0 "a"
+        // 1 "b"
+    </script>
+
+
+
+    <!-- <script>
+        ['a', 'b', 'c'].fill(7)
+        console.log(['a', 'b', 'c'].fill(7));
+        // [7, 7, 7]
+
+        new Array(3).fill(7)
+        console.log(new Array(3).fill(7));
+        // [7, 7, 7]
+
+        // fill方法还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置。
+        ['a', 'b', 'c'].fill(7, 1, 2)
+        console.log(['a', 'b', 'c'].fill(7, 1, 2));
+        // ['a', 7, 'c']
+
+        for (let index of ['a', 'b'].keys()) {
+            console.log(index);
+        }
+        // 0
+        // 1
+
+        for (let elem of ['a', 'b'].values()) {
+            console.log(elem);
+        }
+        // 'a'
+        // 'b'
+
+        for (let [index, elem] of ['a', 'b'].entries()) {
+            console.log(index, elem);
+        }
+        // 0 "a"
+        // 1 "b"
+    </script> -->
+    <!-- <script>
+        ['a', 'b', 'c'].fill(7)
+        console.log(['a', 'b', 'c'].fill(7));
+        // [7, 7, 7]
+
+        new Array(3).fill(7)
+        console.log(new Array(3).fill(7));
+        // [7, 7, 7]
+
+        // fill方法还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置。
+        ['a', 'b', 'c'].fill(7, 1, 2)
+        console.log(['a', 'b', 'c'].fill(7, 1, 2));
+        // ['a', 7, 'c']
+
+        for (let index of ['a', 'b'].keys()) {
+            console.log(index);
+        }
+        // 0
+        // 1
+
+        for (let elem of ['a', 'b'].values()) {
+            console.log(elem);
+        }
+        // 'a'
+        // 'b'
+
+        for (let [index, elem] of ['a', 'b'].entries()) {
+            console.log(index, elem);
+        }
+        // 0 "a"
+        // 1 "b"
+    </script> -->
+
+
+</body>
+
+</html>
