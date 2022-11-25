@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class HelloWorld {
+            constructor() {
+                this.name_ = ''
+            }
+            get name() {
+                return 'get name: ' + this.name_;
+            }
+            set name(value) {
+                console.log('set name: ' + value);
+                this.name_ = value;
+            }
+        }
+        let hw = new HelloWorld();
+
+        //'set name:'
+        hw.name = '梅西';
+
+        // 'get name'
+        console.log(hw.name)
+
+        // ——————————————————————————————————————————————————
+
+        let price = 100
+        class Per {
+
+            get price() {
+                console.log('读取价格属性')
+                return price
+            }
+            set price(val) {
+                console.log('设置价格属性', val)  //120
+                price = val
+            }
+
+        }
+        let p = new Per()
+        console.log(p.price) // 100
+        p.price = 120
+    </script>
+
+    <!-- <script>
+        class HelloWorld {
+            constructor() {
+                this.name_ = ''
+            }
+            get name() {
+                return 'get name: ' + this.name_;
+            }
+            set name(value) {
+                console.log('set name: ' + value);
+                this.name_ = value;
+            }
+        }
+        let hw = new HelloWorld();
+
+        //'set name:'
+        hw.name = '梅西';
+
+        // 'get name'
+        console.log(hw.name)
+
+        // ——————————————————————————————————————————————————
+
+        let price = 100
+        class Per {
+
+            get price() {
+                console.log('读取价格属性')
+                return price
+            }
+            set price(val) {
+                console.log('设置价格属性', val)  //120
+                price = val
+            }
+
+        }
+        let p = new Per()
+        console.log(p.price) // 100
+        p.price = 120
+    </script> -->
+
+    <!-- <script>
+        class HelloWorld {
+            constructor() {
+                this.name_ = ''
+            }
+            get name() {
+                return 'get name: ' + this.name_;
+            }
+            set name(value) {
+                console.log('set name: ' + value);
+                this.name_ = value;
+            }
+        }
+        let hw = new HelloWorld();
+
+        //'set name:'
+        hw.name = '梅西';
+
+        // 'get name'
+        console.log(hw.name)
+
+        // ——————————————————————————————————————————————————
+
+        let price = 100
+        class Per {
+
+            get price() {
+                console.log('读取价格属性')
+                return price
+            }
+            set price(val) {
+                console.log('设置价格属性', val)  //120
+                price = val
+            }
+
+        }
+        let p = new Per()
+        console.log(p.price) // 100
+        p.price = 120
+    </script> -->
+</body>
+
+</html>

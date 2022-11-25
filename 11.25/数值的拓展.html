@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Number.isFinite 检测一个数值是否为有限数
+        console.log(Number.isFinite(100)); //true
+        console.log(Number.isFinite(100/0)); //false
+        console.log(Number.isFinite(Infinity)); //false
+
+        // Number.isNaN检测一个数值是否为NaN
+        console.log(Number.isNaN(123));  //false
+
+        // 二进制
+        let b=0b1010
+        let o=0o777
+
+        // 十进制
+        let d=100
+        // 八进制
+        let x=0xff
+
+        // Number.EPSILON 是js表示的最小精度
+        function equal(a,b){
+            if(Math.abs(a-b)<Number.EPSILON){
+                return true
+            }else{
+                return false
+            }
+        }
+        console.log(equal(0.1+0.2),0.3);  //false 0.3
+    </script>
+
+    <!-- <script>
+        // Number.isFinite 检测一个数值是否有限数
+        console.log(Number.isFinite(100));
+        console.log(Number.isFinite(100/0));
+        console.log(Number.isFinite(Infinity));
+
+
+        //Number.isNaN检测一个数值是否为NaN
+        console.log(Number.isNaN(123));
+
+    // 二进制
+    let b=ob1010
+    let o=0o777
+    // 十进制
+    let d=100
+    // 八进制
+    let x=0xff
+
+    // Number.EPSILON 是js表示最小的精度
+    function equal(a,b){
+        if(Math.abs(a-b)<Number.EPSILON){
+            return true
+        }else{
+            return false
+        }
+    }
+    console.log(equal(0.1+0.2),0.3);
+    </script> -->
+    <!-- <script>
+        // Number.isFinite 检测一个数值是否有限数
+        console.log(Number.isFinite(100));
+        console.log(Number.isFinite(100/0));
+        console.log(Number.isFinite(Infinity));
+
+
+        //Number.isNaN检测一个数值是否为NaN
+        console.log(Number.isNaN(123));
+
+    // 二进制
+    let b=ob1010
+    let o=0o777
+    // 十进制
+    let d=100
+    // 八进制
+    let x=0xff
+
+    // Number.EPSILON 是js表示最小的精度
+    function equal(a,b){
+        if(Math.abs(a-b)<Number.EPSILON){
+            return true
+        }else{
+            return false
+        }
+    }
+    console.log(equal(0.1+0.2),0.3);
+    </script> -->
+</body>
+</html>
