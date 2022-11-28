@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 枚举：可循环的变量和属性
+        let hope='我想打游戏'
+        let person={
+            name:'chb',
+            age:21,
+        }
+
+        Object.defineProperty(person,'hope',{
+            // value:hope,
+            // enumerable:true  使变量变成可循环的
+            // writable:true  使变量变成可修改的
+            // configurable:true 使属性可以被删除
+            get:function(){
+                console.log('读取');
+                return hope
+            },
+            set(val){
+                hope=val
+                console.log('设置',val);
+            }
+        })
+        console.log(person);
+        console.log(Object.keys(person));
+        console.log(Object.values(person));
+    </script>
+</body>
+</html>
