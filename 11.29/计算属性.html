@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>我的姓是：<input type="text" v-model='firstName'></p>
+        <p>我的名是：<input type="text" v-model='lastName'></p>
+        <p>我的姓名是：<input type="text" v-model='fullName' @input='change'></p>
+        <p>{{handle()}}</p>
+        <p>{{getName}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                firstName: '程',
+                lastName: '怀博',
+                fullName: ''
+            },
+            methods: {
+                handle(){
+                    this.fullName=this.firstName+'-'+this.lastName
+                },
+                change(){
+                    let arr=this.fullName.split('-')
+                    this.firstName=arr[0]
+                    this.lastName=arr[1]
+                }
+            },
+            computed: {
+                //   完整写法
+                // fullName:{
+                //     get:function(){
+                //         console.log('被读取');
+                //         return this.firstName+'-'+this.lastName
+                //     },
+                //     set:function(val){
+                //         console.log('设置');
+                //         // 使用字符串切割方法将字符串分开，并进行赋值
+                //         let arr =result=val.split('-')
+                //         this.firstName=result[0]
+                //         this.lastName=result[1]
+                //     }
+                // }
+                // 简写方式
+                getName() {
+                    console.log('111');
+                    return this.firstName + '-' + this.lastName
+                }
+            }
+        })
+    </script>
+</body>
+
+
+<!-- <body>
+    <div id="app">
+        <p>我的姓是：<input type="text" v-model='firstName'></p>
+        <p>我的名是：<input type="text" v-model='lastName'></p>
+        <p>我的姓名是：<input type="text" v-model='fullName' @input='change'></p>
+        <p>{{handle()}}</p>
+        <p>{{getName}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                firstName: '程',
+                lastName: '怀博',
+                fullName: ''
+            },
+            methods: {
+                handle(){
+                    this.fullName=this.firstName+'-'+this.lastName
+                },
+                change(){
+                    let arr=this.fullName.split('-')
+                    this.firstName=arr[0]
+                    this.lastName=arr[1]
+                }
+            },
+            computed: {
+                //   完整写法
+                // fullName:{
+                //     get:function(){
+                //         console.log('被读取');
+                //         return this.firstName+'-'+this.lastName
+                //     },
+                //     set:function(val){
+                //         console.log('设置');
+                //         // 使用字符串切割方法将字符串分开，并进行赋值
+                //         let arr =result=val.split('-')
+                //         this.firstName=result[0]
+                //         this.lastName=result[1]
+                //     }
+                // }
+                // 简写方式
+                getName() {
+                    console.log('111');
+                    return this.firstName + '-' + this.lastName
+                }
+            }
+        })
+    </script>
+</body> -->
+
+
+
+<!-- <body>
+    <div id="app">
+        <p>我的姓是：<input type="text" v-model='firstName'></p>
+        <p>我的名是：<input type="text" v-model='lastName'></p>
+        <p>我的姓名是：<input type="text" v-model='fullName' @input='change'></p>
+        <p>{{handle()}}</p>
+        <p>{{getName}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                firstName: '程',
+                lastName: '怀博',
+                fullName: ''
+            },
+            methods: {
+                handle(){
+                    this.fullName=this.firstName+'-'+this.lastName
+                },
+                change(){
+                    let arr=this.fullName.split('-')
+                    this.firstName=arr[0]
+                    this.lastName=arr[1]
+                }
+            },
+            computed: {
+                //   完整写法
+                // fullName:{
+                //     get:function(){
+                //         console.log('被读取');
+                //         return this.firstName+'-'+this.lastName
+                //     },
+                //     set:function(val){
+                //         console.log('设置');
+                //         // 使用字符串切割方法将字符串分开，并进行赋值
+                //         let arr =result=val.split('-')
+                //         this.firstName=result[0]
+                //         this.lastName=result[1]
+                //     }
+                // }
+                // 简写方式
+                getName() {
+                    console.log('111');
+                    return this.firstName + '-' + this.lastName
+                }
+            }
+        })
+    </script>
+</body> -->
+
+</html>
