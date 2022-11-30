@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h3>列表渲染</h3>
+        <input type="text" v-model='value' placeholder="请输入名字进行查询" @input='change'>
+        <button @click='flag=2'>年龄升序</button>
+        <button @click='flag=1'>年龄降序</button>
+        <button @click='flag=0'>原顺序</button>
+        <ul>
+            <li v-for='item in lists' :key='item.id'>{{item.name}}-{{item.age}}-{{item.sex}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                list:[
+                    {
+                        id:1,
+                        name:'梅西',
+                        age:19,
+                        sex:'男'
+                    },
+                    {
+                        id:2,
+                        name:'李白',
+                        age:20,
+                        sex:'男'
+                    },
+                    {
+                        id:3,
+                        name:'韩信',
+                        age:21,
+                        sex:'男'
+                    },
+                    {
+                        id:4,
+                        name:'阿离',
+                        age:23,
+                        sex:'男'
+                    },
+                ],
+                arr:[],
+                value:'',
+                flag:0
+            },
+            created(){
+            // this.change()
+            },
+            methods: {
+                change(){
+                    // this.arr=this.list.filter(i=>i.name.includes(this.value))
+                }
+            },
+            watch: {
+                // value:{
+                //     immediate:true,
+                //     handler(newval,odlval){
+                //         this.arr=this.list.filter(i=>{
+                //             return i.name.indexOf(newval)!==-1
+                //         })
+                //     }
+                // }
+            },
+            computed: {
+                // arrs(){
+                //     return this.list.filter(i=>i.name.includes(this.value))
+                // }
+                lists(){
+                    let res=this.list.filter(i=>i.name.includes(this.value))
+                    if(this.flag){
+                        res.sort((a,b)=>{
+                            return this.flag==2?a.age-b.age:b.age-a.age
+                        })
+                    }
+                    return res
+                }
+            },
+        })
+    </script>
+</body>
+</html>

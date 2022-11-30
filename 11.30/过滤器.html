@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <script src="./js/dayjs.min.js"></script>
+</head>
+<body>
+    <div id='app'>
+        <div>
+            局内时间：{{time | nowTime}}
+        </div>
+        <div>
+            全局时间：{{time | times}}
+        </div>
+    </div>
+    <script>
+        // 全局过滤器
+        Vue.filter('times',function(value,str='YYYY年MM月DD日 HH:mm:ss'){
+            return dayjs(value).format(str)
+        })
+        new Vue({
+            el:'#app',
+            data:{
+                time:new Date().valueOf()
+            },
+            created(){
+                console.log(this.time);
+            },
+            // 局部过滤器
+            filters:{
+                nowTime(value,str='YYYY年MM月DD日 HH:mm:ss'){
+                    return dayjs(value).format(str)
+                }
+            }
+        })
+    </script>
+</body>
+<!-- <body>
+    <div id='app'>
+        <div>
+            局内时间：{{time | nowTime}}
+        </div>
+        <div>
+            全局时间：{{time | times}}
+        </div>
+    </div>
+    <script>
+        // 全局过滤器
+        Vue.filter('times',function(value,str='YYYY年MM月DD日 HH:mm:ss'){
+            return dayjs(value).format(str)
+        })
+        new Vue({
+            el:'#app',
+            data:{
+                time:new Date().valueOf()
+            },
+            created(){
+                console.log(this.time);
+            },
+            // 局部过滤器
+            filters:{
+                nowTime(value,str='YYYY年MM月DD日 HH:mm:ss'){
+                    return dayjs(value).format(str)
+                }
+            }
+        })
+    </script>
+</body> -->
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click='add'>点击改变属性</button>
+        <ul>
+            <li v-for='item in list' :key='item.id'>{{item.name}}-{{item.age}}-{{item.sex}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                list: [{
+                        id: 1,
+                        name: '梅西',
+                        age: 19,
+                        sex: '男'
+                    },
+                    {
+                        id: 2,
+                        name: '李白',
+                        age: 20,
+                        sex: '男'
+                    },
+                    {
+                        id: 3,
+                        name: '韩信',
+                        age: 21,
+                        sex: '男'
+                    },
+                    {
+                        id: 4,
+                        name: '阿离',
+                        age: 23,
+                        sex: '男'
+                    },
+                ],
+            },
+            methods: {
+                add() {
+                    // this.list[0].name = '老师' //可以
+                    // this.list[0].age = '666' //可以
+                    // this.list[0].sex = '男' //可以
+                    // this.list[0] = {    //不可以
+                    //     id: 1,
+                    //     name: '梅西111',   
+                    //     age: 169,
+                    //     sex: '男11'
+                    // }
+
+                    this.list.splice(0,1,{
+                        id: 1,
+                        name: '梅西',
+                        age: 19,
+                        sex: '男'
+                    })
+
+                    // Vue.set(this.list,0,{
+                    //     id: 1,
+                    //     name: '梅西',
+                    //     age: 19,
+                    //     sex: '男'
+                    // })
+                }
+            },
+        })
+    </script>
+</body>
+<!-- <body>
+    <div id="app">
+        <button @click='add'>点击改变属性</button>
+        <ul>
+            <li v-for='item in list' :key='item.id'>{{item.name}}-{{item.age}}-{{item.sex}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                list: [{
+                        id: 1,
+                        name: '梅西',
+                        age: 19,
+                        sex: '男'
+                    },
+                    {
+                        id: 2,
+                        name: '李白',
+                        age: 20,
+                        sex: '男'
+                    },
+                    {
+                        id: 3,
+                        name: '韩信',
+                        age: 21,
+                        sex: '男'
+                    },
+                    {
+                        id: 4,
+                        name: '阿离',
+                        age: 23,
+                        sex: '男'
+                    },
+                ],
+            },
+            methods: {
+                add() {
+                    // this.list[0].name = '老师' //可以
+                    // this.list[0].age = '666' //可以
+                    // this.list[0].sex = '男' //可以
+                    // this.list[0] = {    //不可以
+                    //     id: 1,
+                    //     name: '梅西111',   
+                    //     age: 169,
+                    //     sex: '男11'
+                    // }
+
+                    this.list.splice(0,1,{
+                        id: 1,
+                        name: '梅西',
+                        age: 19,
+                        sex: '男'
+                    })
+
+                    // Vue.set(this.list,0,{
+                    //     id: 1,
+                    //     name: '梅西',
+                    //     age: 19,
+                    //     sex: '男'
+                    // })
+                }
+            },
+        })
+    </script>
+</body> -->
+
+</html>
