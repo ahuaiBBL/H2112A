@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c" style="border:1px solid #ccc"></canvas>
+</body>
+<!-- <script>
+    const cnv=document.getElementById('c')
+    const ctx=cnv.getContext('2d')
+
+    ctx.moveTo(50,100)
+    ctx.lineTo(200,50)
+    ctx.stroke()
+    
+    ctx.moveTo(20,120.5)
+    ctx.lineTo(200,120.5)
+    ctx.stroke()
+</script> -->
+<script>
+      const cnv=document.getElementById('c')
+    const ctx=cnv.getContext('2d')
+
+    ctx.moveTo(50,100)
+    ctx.lineTo(200,50)
+
+    // 修改直线的宽度
+    ctx.lineWidth=20
+    // 修改直线的颜色
+    ctx.strokeStyle='green'
+
+    // 修改两端的样式
+    ctx.lineCap='butt'
+    // 默认：butt，圆形：round
+    ctx.stroke()
+    
+</script>
+</html>

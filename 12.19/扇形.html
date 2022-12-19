@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c" style="border:1px solid #ccc" width="300" height="300"></canvas>
+</body>
+<script>
+      const cnv=document.getElementById('c')
+    const cxt=cnv.getContext('2d')
+
+    cxt.beginPath()
+    cxt.moveTo(100,100)
+    cxt.arc(100,100,80,0*Math.PI/180,60*Math.PI/180,true)
+    cxt.closePath()
+    // cxt.fill()//填充
+    cxt.stroke()
+</script>
+</html>
