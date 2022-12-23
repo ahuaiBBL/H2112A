@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>3D 控制罗盘</title>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/>
+    <style>
+        html, body, #container {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=2.0&key=49477b861721e63cf681f48f41005312"></script>
+<script type="text/javascript">
+    // 创建地图实例
+    var map = new AMap.Map("container", {
+        zoom: 13,
+        center: [116.43, 39.92],
+        viewMode: '3D',
+        pitch: 45
+    });
+
+    AMap.plugin([
+        'AMap.ControlBar',
+    ], function(){
+
+        // 添加 3D 罗盘控制
+        map.addControl(new AMap.ControlBar({
+            position: {
+                right: '20px',
+                top: '20px'
+            },
+            showControlButton: true,  // 是否显示倾斜、旋转按钮。默认为 true
+        }));
+    });
+</script>
+</body>
+</html>
